@@ -9,9 +9,14 @@ namespace GuiCs_Test
         static void Main(string[] args)
         {
             Application.Init();
+
+            //Change terminal colors to green text on black background
+            Colors.Base.Normal = Application.Driver.MakeAttribute(Color.Green, Color.Black);
             var top = Application.Top;
 
+            //This label appears outside the window
             var login = new Label("Login: ") { X = 0, Y = 0 };
+            //added directly to the top level
             top.Add(login);
 
             var win = new Window("MyApp")
@@ -54,14 +59,18 @@ namespace GuiCs_Test
             );
 
             var text = new TextField("Yo") { X = 1, Y = 1, Width = Dim.Fill() };
+            var text2 = new Label("Yo") { X = 1, Y = 2, Width = Dim.Fill() };
 
             win2.Add(
-                text
+                text,
+                text2
                 ); ;
 
             //Button 1 click event overrides text in text field and inserts "Hello"
             Button1.Clicked += () =>
             {
+                //showing difference between using label and text field for inserting text
+                text2.Text = "Hello";
                 text.DeleteAll();
                 text.InsertText("Hello");
             };
