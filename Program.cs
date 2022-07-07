@@ -20,31 +20,51 @@ namespace GuiCs_Test
                 Y = 1, // Leave one row for the toplevel menu
 
                 // By using Dim.Fill(), it will automatically resize without manual intervention
-                Width = Dim.Percent(50f),
+                // width is 25%
+                Width = Dim.Percent(25f),
                 Height = Dim.Fill()
             };
+
+            //second window on right half of screen
             var win2 = new Window("MySlap")
             {
+                //position on right side of win
                 X = Pos.Right(win),
                 Y = 1,
 
-                Width = Dim.Percent(50f),
+                //width dimension is 75%
+                Width = Dim.Percent(75f),
                 Height = Dim.Fill()
             };
             top.Add(win, win2);
 
             var Button1 = new Button("Hello") { X = 3, Y = 2 };
-            var Button2 = new Button("Goodbye") { X = Pos.Left(Button1), Y = Pos.Top(Button1) + 1 };
+            var Button2 = new Button("Goodbye") { 
+                X = Pos.Left(Button1), 
+                Y = Pos.Top(Button1) + 1,                
+            };
 
+            //button 2 click event closes application
+            Button2.Clicked += () => Application.RequestStop();
+                       
             win.Add(
-                //Button1,Button2,
+                Button1,Button2,
                 new Button(3, 14, "Ok"),
                 new Button(10, 14, "Cancel")
             );
 
-            win2.Add(Button1 , Button2);
+            var text = new TextField("Yo") { X = 1, Y = 1, Width = Dim.Fill() };
 
-            
+            win2.Add(
+                text
+                ); ;
+
+            //Button 1 click event overrides text in text field and inserts "Hello"
+            Button1.Clicked += () =>
+            {
+                text.DeleteAll();
+                text.InsertText("Hello");
+            };
 
             Application.Run();
         }
