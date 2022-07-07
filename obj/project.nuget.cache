@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "7PpO3QcnmlyT81BbTpYWt3L6zIZIfVpWzXeEPP0GeJbRVZnAxP1lDb0UvW7FT6zG1SWvrQm7JkwMFnuyOXLDPA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lhotchkiss\\source\\repos\\GuiCs-Test\\GuiCs-Test.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lhotchkiss\\.nuget\\packages\\nstack.core\\0.17.1\\nstack.core.0.17.1.nupkg.sha512",
+    "C:\\Users\\lhotchkiss\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\lhotchkiss\\.nuget\\packages\\terminal.gui\\1.6.4\\terminal.gui.1.6.4.nupkg.sha512"
+  ],
+  "logs": []
+}
