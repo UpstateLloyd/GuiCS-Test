@@ -18,3 +18,6 @@ C:\Users\lhotchkiss\source\repos\GuiCs-Test\obj\Debug\netcoreapp3.1\GuiCs-Test.c
 C:\Users\lhotchkiss\source\repos\GuiCs-Test\obj\Debug\netcoreapp3.1\GuiCs-Test.dll
 C:\Users\lhotchkiss\source\repos\GuiCs-Test\obj\Debug\netcoreapp3.1\GuiCs-Test.pdb
 C:\Users\lhotchkiss\source\repos\GuiCs-Test\obj\Debug\netcoreapp3.1\GuiCs-Test.genruntimeconfig.cache
+C:\Users\lhotchkiss\source\repos\GuiCs-Test\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\lhotchkiss\source\repos\GuiCs-Test\bin\Debug\netcoreapp3.1\RestSharp.dll
+C:\Users\lhotchkiss\source\repos\GuiCs-Test\bin\Debug\netcoreapp3.1\System.Text.Json.dll
