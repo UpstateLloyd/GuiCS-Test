@@ -55,24 +55,52 @@ namespace GuiCs_Test
                 Y = Pos.Top(Button1) + 1,                
             };
 
+            var d = new Dialog("Dialog")
+            {
+                X = Pos.Percent(40),
+                Y = Pos.Percent(40),
+                Width = 15,
+                Height = 16,                
+            };
+
+            Label ml2;
+
+            void NewFile()
+            {
+                var ok = new Button("Ok", is_default: true);
+                ok.Clicked += () => { Application.RequestStop(); };
+                var cancel = new Button("Cancel");
+                cancel.Clicked += () => { Application.RequestStop(); };
+                var d = new Dialog("New File", 50, 20, ok, cancel);
+                ml2 = new Label(1, 1, "Mouse Debug Line");
+                d.Add(ml2);
+                Application.Run(d);
+            }
+
             //button 2 click event closes application
             Button2.Clicked += () => Application.RequestStop();
 
-            
+            var OK = new Button("Ok")
+            {
+                X = 3,
+                Y = 14
+            };
+
+            OK.Clicked  += () => top.Add(d); 
 
             win.Add(
                 Button1,Button2,
-                new Button(3, 14, "Ok"),
+                OK,
                 new Button(10, 14, "Cancel")
             );
 
             var text = new TextField("Yo") { X = 1, Y = 1, Width = Dim.Fill() };
             var text2 = new Label("Yo") { X = 1, Y = 2, Width = Dim.Fill() };
 
-            //win2.Add(
-            //    text,
-            //    text2
-            //    ); 
+            win2.Add(
+                text,
+                text2             
+                );
 
             //Button 1 click event overrides text in text field and inserts "Hello"
             Button1.Clicked += async () =>
@@ -165,7 +193,7 @@ namespace GuiCs_Test
             
             win.KeyDown += (e) => KeyDownPressUp(e.KeyEvent, e.KeyEvent.ToString());
 
-            win2.Add(container);
+            //win2.Add(container);
 
             Application.Run();
         }
