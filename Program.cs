@@ -54,7 +54,7 @@ namespace GuiCs_Test
                 X = Pos.Left(Button1), 
                 Y = Pos.Top(Button1) + 1,                
             };
-
+            
             var d = new Dialog("Dialog")
             {
                 X = Pos.Percent(40),
@@ -62,20 +62,10 @@ namespace GuiCs_Test
                 Width = 15,
                 Height = 16,                
             };
-
-            Label ml2;
-
-            void NewFile()
-            {
-                var ok = new Button("Ok", is_default: true);
-                ok.Clicked += () => { Application.RequestStop(); };
-                var cancel = new Button("Cancel");
-                cancel.Clicked += () => { Application.RequestStop(); };
-                var d = new Dialog("New File", 50, 20, ok, cancel);
-                ml2 = new Label(1, 1, "Mouse Debug Line");
-                d.Add(ml2);
-                Application.Run(d);
-            }
+            
+            var dExit = new Button("Exit") { X = 1, Y = 2 };
+            dExit.Clicked += () => top.Remove(d);
+            d.Add(dExit);      
 
             //button 2 click event closes application
             Button2.Clicked += () => Application.RequestStop();
